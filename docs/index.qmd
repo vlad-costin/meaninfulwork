@@ -505,7 +505,7 @@ cohpurp =~ coh13 + coh14 + coh16 + coh6 + coh8 + coh3 + coh4 + coh15 + coh11 + p
 sig  =~ sig3 + sig1 +sig5 + socwor3
 '
 cohpurp_out <- cfa(cohpurp_mod, data=data_selection, ordered = T, estimator = "dwls")
-summary (cohpurp_mod, standardized = TRUE, fit.measures = TRUE)
+summary (cohpurp_out, standardized = TRUE, fit.measures = TRUE)
 ```
 
 #### Coh and sig items collapsed onto one factor (2-factor model)
