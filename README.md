@@ -1,1 +1,1 @@
-Analysis on meaninful work project (Vlad, Sarah & Frank)
+Analysis on meaninful work project (Sarah, Vlad & Frank)
