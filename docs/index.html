@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -34,8 +97,8 @@ ul.task-list{list-style: none;}
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
-<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">Table of contents</h2>
    
@@ -64,10 +127,15 @@ ul.task-list{list-style: none;}
   <li><a href="#cfa-model" id="toc-cfa-model" class="nav-link" data-scroll-target="#cfa-model"> <span class="header-section-number">6.1</span> CFA model</a></li>
   <li><a href="#alternative-models" id="toc-alternative-models" class="nav-link" data-scroll-target="#alternative-models"> <span class="header-section-number">6.2</span> Alternative models</a></li>
   </ul></li>
+  <li><a href="#reliability-analysis" id="toc-reliability-analysis" class="nav-link" data-scroll-target="#reliability-analysis"> <span class="header-section-number">7</span> Reliability analysis</a></li>
+  <li><a href="#final-items" id="toc-final-items" class="nav-link" data-scroll-target="#final-items"> <span class="header-section-number">8</span> Final items</a>
+  <ul class="collapse">
+  <li><a href="#coherence-2" id="toc-coherence-2" class="nav-link" data-scroll-target="#coherence-2"> <span class="header-section-number">8.1</span> Coherence</a></li>
+  <li><a href="#purpose-2" id="toc-purpose-2" class="nav-link" data-scroll-target="#purpose-2"> <span class="header-section-number">8.2</span> Purpose</a></li>
+  <li><a href="#significancemattering" id="toc-significancemattering" class="nav-link" data-scroll-target="#significancemattering"> <span class="header-section-number">8.3</span> Significance/mattering</a></li>
+  </ul></li>
   </ul>
 </nav>
-</div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -1052,263 +1120,8 @@ Scales y*:
 <div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-12 ended normally after 53 iterations
-
-  Estimator                                       DWLS
-  Optimization method                           NLMINB
-  Number of model parameters                       134
-
-  Number of observations                           278
-
-Model Test User Model:
-                                                      
-  Test statistic                              2207.860
-  Degrees of freedom                               151
-  P-value (Chi-square)                           0.000
-
-Model Test Baseline Model:
-
-  Test statistic                             54269.843
-  Degrees of freedom                               171
-  P-value                                        0.000
-
-User Model versus Baseline Model:
-
-  Comparative Fit Index (CFI)                    0.962
-  Tucker-Lewis Index (TLI)                       0.957
-
-Root Mean Square Error of Approximation:
-
-  RMSEA                                          0.222
-  90 Percent confidence interval - lower         0.214
-  90 Percent confidence interval - upper         0.230
-  P-value RMSEA &lt;= 0.05                          0.000
-
-Standardized Root Mean Square Residual:
-
-  SRMR                                           0.139
-
-Parameter Estimates:
-
-  Standard errors                             Standard
-  Information                                 Expected
-  Information saturated (h1) model        Unstructured
-
-Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-  cohpurp =~                                                            
-    coh13             1.000                               0.813    0.813
-    coh14             0.917    0.019   48.862    0.000    0.746    0.746
-    coh16             0.997    0.019   51.260    0.000    0.811    0.811
-    coh6             -0.845    0.019  -43.738    0.000   -0.687   -0.687
-    coh8             -0.837    0.019  -43.148    0.000   -0.681   -0.681
-    coh3              0.972    0.019   50.534    0.000    0.791    0.791
-    coh4              1.025    0.020   51.367    0.000    0.834    0.834
-    coh15             0.945    0.019   49.358    0.000    0.769    0.769
-    coh11            -0.803    0.019  -41.203    0.000   -0.653   -0.653
-    purp7             1.019    0.019   54.470    0.000    0.829    0.829
-    purp3             0.982    0.018   54.037    0.000    0.799    0.799
-    purp13            1.011    0.018   55.673    0.000    0.822    0.822
-    purp4             1.015    0.019   53.750    0.000    0.825    0.825
-    purp15            1.049    0.018   57.044    0.000    0.853    0.853
-    purp14            1.064    0.019   57.481    0.000    0.865    0.865
-  sig =~                                                                
-    sig3              1.000                               0.842    0.842
-    sig1              1.065    0.026   41.057    0.000    0.897    0.897
-    sig5             -0.861    0.023  -37.553    0.000   -0.725   -0.725
-    socwor3           1.123    0.025   44.891    0.000    0.945    0.945
-
-Covariances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-  cohpurp ~~                                                            
-    sig               0.478    0.011   42.594    0.000    0.698    0.698
-
-Intercepts:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-   .coh13             0.000                               0.000    0.000
-   .coh14             0.000                               0.000    0.000
-   .coh16             0.000                               0.000    0.000
-   .coh6              0.000                               0.000    0.000
-   .coh8              0.000                               0.000    0.000
-   .coh3              0.000                               0.000    0.000
-   .coh4              0.000                               0.000    0.000
-   .coh15             0.000                               0.000    0.000
-   .coh11             0.000                               0.000    0.000
-   .purp7             0.000                               0.000    0.000
-   .purp3             0.000                               0.000    0.000
-   .purp13            0.000                               0.000    0.000
-   .purp4             0.000                               0.000    0.000
-   .purp15            0.000                               0.000    0.000
-   .purp14            0.000                               0.000    0.000
-   .sig3              0.000                               0.000    0.000
-   .sig1              0.000                               0.000    0.000
-   .sig5              0.000                               0.000    0.000
-   .socwor3           0.000                               0.000    0.000
-    cohpurp           0.000                               0.000    0.000
-    sig               0.000                               0.000    0.000
-
-Thresholds:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-    coh13|t1         -1.957    0.160  -12.223    0.000   -1.957   -1.957
-    coh13|t2         -1.545    0.119  -12.977    0.000   -1.545   -1.545
-    coh13|t3         -1.277    0.102  -12.463    0.000   -1.277   -1.277
-    coh13|t4         -0.889    0.087  -10.195    0.000   -0.889   -0.889
-    coh13|t5         -0.190    0.076   -2.513    0.012   -0.190   -0.190
-    coh13|t6          1.200    0.099   12.153    0.000    1.200    1.200
-    coh14|t1         -2.097    0.181  -11.619    0.000   -2.097   -2.097
-    coh14|t2         -1.756    0.137  -12.804    0.000   -1.756   -1.756
-    coh14|t3         -1.341    0.106  -12.663    0.000   -1.341   -1.341
-    coh14|t4         -1.079    0.094  -11.526    0.000   -1.079   -1.079
-    coh14|t5         -0.457    0.078   -5.845    0.000   -0.457   -0.457
-    coh14|t6          1.017    0.091   11.134    0.000    1.017    1.017
-    coh16|t1         -2.097    0.181  -11.619    0.000   -2.097   -2.097
-    coh16|t2         -1.756    0.137  -12.804    0.000   -1.756   -1.756
-    coh16|t3         -1.436    0.112  -12.870    0.000   -1.436   -1.436
-    coh16|t4         -1.047    0.092  -11.332    0.000   -1.047   -1.047
-    coh16|t5         -0.302    0.077   -3.945    0.000   -0.302   -0.302
-    coh16|t6          1.164    0.097   11.983    0.000    1.164    1.164
-    coh6|t1          -0.811    0.085   -9.539    0.000   -0.811   -0.811
-    coh6|t2           0.427    0.078    5.490    0.000    0.427    0.427
-    coh6|t3           0.972    0.090   10.829    0.000    0.972    0.972
-    coh6|t4           1.411    0.110   12.826    0.000    1.411    1.411
-    coh6|t5           1.847    0.147   12.586    0.000    1.847    1.847
-    coh6|t6           2.022    0.169   11.960    0.000    2.022    2.022
-    coh8|t1          -0.930    0.088  -10.516    0.000   -0.930   -0.930
-    coh8|t2           0.027    0.075    0.359    0.719    0.027    0.027
-    coh8|t3           0.457    0.078    5.845    0.000    0.457    0.457
-    coh8|t4           0.889    0.087   10.195    0.000    0.889    0.889
-    coh8|t5           1.545    0.119   12.977    0.000    1.545    1.545
-    coh8|t6           1.957    0.160   12.223    0.000    1.957    1.957
-    coh3|t1          -2.187    0.196  -11.166    0.000   -2.187   -2.187
-    coh3|t2          -1.799    0.142  -12.709    0.000   -1.799   -1.799
-    coh3|t3          -1.461    0.113  -12.908    0.000   -1.461   -1.461
-    coh3|t4          -1.047    0.092  -11.332    0.000   -1.047   -1.047
-    coh3|t5          -0.350    0.077   -4.541    0.000   -0.350   -0.350
-    coh3|t6           1.164    0.097   11.983    0.000    1.164    1.164
-    coh4|t1          -1.957    0.160  -12.223    0.000   -1.957   -1.957
-    coh4|t2          -1.576    0.121  -12.982    0.000   -1.576   -1.576
-    coh4|t3          -1.364    0.107  -12.722    0.000   -1.364   -1.364
-    coh4|t4          -0.876    0.087  -10.087    0.000   -0.876   -0.876
-    coh4|t5          -0.200    0.076   -2.633    0.008   -0.200   -0.200
-    coh4|t6           1.181    0.098   12.069    0.000    1.181    1.181
-    coh15|t1         -2.298    0.218  -10.542    0.000   -2.298   -2.298
-    coh15|t2         -1.715    0.133  -12.874    0.000   -1.715   -1.715
-    coh15|t3         -1.461    0.113  -12.908    0.000   -1.461   -1.461
-    coh15|t4         -1.129    0.096  -11.805    0.000   -1.129   -1.129
-    coh15|t5         -0.518    0.079   -6.552    0.000   -0.518   -0.518
-    coh15|t6          0.902    0.088   10.303    0.000    0.902    0.902
-    coh11|t1         -1.164    0.097  -11.983    0.000   -1.164   -1.164
-    coh11|t2         -0.209    0.076   -2.752    0.006   -0.209   -0.209
-    coh11|t3          0.312    0.077    4.064    0.000    0.312    0.312
-    coh11|t4          0.703    0.082    8.525    0.000    0.703    0.703
-    coh11|t5          1.257    0.101   12.390    0.000    1.257    1.257
-    coh11|t6          2.022    0.169   11.960    0.000    2.022    2.022
-    purp7|t1         -1.899    0.153  -12.427    0.000   -1.899   -1.899
-    purp7|t2         -1.364    0.107  -12.722    0.000   -1.364   -1.364
-    purp7|t3         -1.017    0.091  -11.134    0.000   -1.017   -1.017
-    purp7|t4         -0.592    0.080   -7.370    0.000   -0.592   -0.592
-    purp7|t5          0.099    0.075    1.317    0.188    0.099    0.099
-    purp7|t6          1.079    0.094   11.526    0.000    1.079    1.079
-    purp3|t1         -1.545    0.119  -12.977    0.000   -1.545   -1.545
-    purp3|t2         -1.032    0.092  -11.234    0.000   -1.032   -1.032
-    purp3|t3         -0.692    0.082   -8.410    0.000   -0.692   -0.692
-    purp3|t4         -0.447    0.078   -5.726    0.000   -0.447   -0.447
-    purp3|t5          0.181    0.076    2.393    0.017    0.181    0.181
-    purp3|t6          1.238    0.101   12.313    0.000    1.238    1.238
-    purp13|t1        -1.677    0.130  -12.924    0.000   -1.677   -1.677
-    purp13|t2        -1.095    0.094  -11.620    0.000   -1.095   -1.095
-    purp13|t3        -0.715    0.083   -8.639    0.000   -0.715   -0.715
-    purp13|t4        -0.359    0.077   -4.659    0.000   -0.359   -0.359
-    purp13|t5         0.209    0.076    2.752    0.006    0.209    0.209
-    purp13|t6         1.129    0.096   11.805    0.000    1.129    1.129
-    purp4|t1         -1.608    0.124  -12.976    0.000   -1.608   -1.608
-    purp4|t2         -1.181    0.098  -12.069    0.000   -1.181   -1.181
-    purp4|t3         -0.862    0.086   -9.979    0.000   -0.862   -0.862
-    purp4|t4         -0.549    0.080   -6.903    0.000   -0.549   -0.549
-    purp4|t5          0.117    0.075    1.556    0.120    0.117    0.117
-    purp4|t6          1.181    0.098   12.069    0.000    1.181    1.181
-    purp15|t1        -1.715    0.133  -12.874    0.000   -1.715   -1.715
-    purp15|t2        -1.219    0.100  -12.234    0.000   -1.219   -1.219
-    purp15|t3        -0.916    0.088  -10.410    0.000   -0.916   -0.916
-    purp15|t4        -0.508    0.079   -6.434    0.000   -0.508   -0.508
-    purp15|t5         0.136    0.076    1.796    0.073    0.136    0.136
-    purp15|t6         1.095    0.094   11.620    0.000    1.095    1.095
-    purp14|t1        -1.847    0.147  -12.586    0.000   -1.847   -1.847
-    purp14|t2        -1.298    0.104  -12.533    0.000   -1.298   -1.298
-    purp14|t3        -0.958    0.089  -10.725    0.000   -0.958   -0.958
-    purp14|t4        -0.669    0.082   -8.181    0.000   -0.669   -0.669
-    purp14|t5         0.018    0.075    0.239    0.811    0.018    0.018
-    purp14|t6         1.032    0.092   11.234    0.000    1.032    1.032
-    sig3|t1          -1.516    0.117  -12.962    0.000   -1.516   -1.516
-    sig3|t2          -0.944    0.089  -10.621    0.000   -0.944   -0.944
-    sig3|t3          -0.726    0.083   -8.752    0.000   -0.726   -0.726
-    sig3|t4          -0.321    0.077   -4.184    0.000   -0.321   -0.321
-    sig3|t5           0.340    0.077    4.422    0.000    0.340    0.340
-    sig3|t6           1.063    0.093   11.430    0.000    1.063    1.063
-    sig1|t1          -1.436    0.112  -12.870    0.000   -1.436   -1.436
-    sig1|t2          -0.902    0.088  -10.303    0.000   -0.902   -0.902
-    sig1|t3          -0.635    0.081   -7.835    0.000   -0.635   -0.635
-    sig1|t4          -0.293    0.076   -3.826    0.000   -0.293   -0.293
-    sig1|t5           0.274    0.076    3.588    0.000    0.274    0.274
-    sig1|t6           1.002    0.091   11.033    0.000    1.002    1.002
-    sig5|t1          -0.750    0.084   -8.979    0.000   -0.750   -0.750
-    sig5|t2          -0.145    0.076   -1.915    0.055   -0.145   -0.145
-    sig5|t3           0.331    0.077    4.303    0.000    0.331    0.331
-    sig5|t4           0.603    0.080    7.487    0.000    0.603    0.603
-    sig5|t5           0.972    0.090   10.829    0.000    0.972    0.972
-    sig5|t6           1.545    0.119   12.977    0.000    1.545    1.545
-    socwor3|t1       -1.677    0.130  -12.924    0.000   -1.677   -1.677
-    socwor3|t2       -1.146    0.096  -11.895    0.000   -1.146   -1.146
-    socwor3|t3       -0.916    0.088  -10.410    0.000   -0.916   -0.916
-    socwor3|t4       -0.635    0.081   -7.835    0.000   -0.635   -0.635
-    socwor3|t5        0.018    0.075    0.239    0.811    0.018    0.018
-    socwor3|t6        1.032    0.092   11.234    0.000    1.032    1.032
-
-Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-   .coh13             0.339                               0.339    0.339
-   .coh14             0.444                               0.444    0.444
-   .coh16             0.342                               0.342    0.342
-   .coh6              0.527                               0.527    0.527
-   .coh8              0.537                               0.537    0.537
-   .coh3              0.375                               0.375    0.375
-   .coh4              0.305                               0.305    0.305
-   .coh15             0.409                               0.409    0.409
-   .coh11             0.574                               0.574    0.574
-   .purp7             0.313                               0.313    0.313
-   .purp3             0.362                               0.362    0.362
-   .purp13            0.325                               0.325    0.325
-   .purp4             0.319                               0.319    0.319
-   .purp15            0.273                               0.273    0.273
-   .purp14            0.252                               0.252    0.252
-   .sig3              0.291                               0.291    0.291
-   .sig1              0.195                               0.195    0.195
-   .sig5              0.475                               0.475    0.475
-   .socwor3           0.106                               0.106    0.106
-    cohpurp           0.661    0.017   37.839    0.000    1.000    1.000
-    sig               0.709    0.023   30.924    0.000    1.000    1.000
-
-Scales y*:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-    coh13             1.000                               1.000    1.000
-    coh14             1.000                               1.000    1.000
-    coh16             1.000                               1.000    1.000
-    coh6              1.000                               1.000    1.000
-    coh8              1.000                               1.000    1.000
-    coh3              1.000                               1.000    1.000
-    coh4              1.000                               1.000    1.000
-    coh15             1.000                               1.000    1.000
-    coh11             1.000                               1.000    1.000
-    purp7             1.000                               1.000    1.000
-    purp3             1.000                               1.000    1.000
-    purp13            1.000                               1.000    1.000
-    purp4             1.000                               1.000    1.000
-    purp15            1.000                               1.000    1.000
-    purp14            1.000                               1.000    1.000
-    sig3              1.000                               1.000    1.000
-    sig1              1.000                               1.000    1.000
-    sig5              1.000                               1.000    1.000
-    socwor3           1.000                               1.000    1.000</code></pre>
+<pre><code>   Length     Class      Mode 
+        1 character character </code></pre>
 </div>
 </div>
 </div>
@@ -2136,6 +1949,125 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="reliability-analysis" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="reliability-analysis"><span class="header-section-number">7</span> Reliability analysis</h2>
+<p>The final model showed excellent reliability. I ran a Revelle’s omega total in order to circumvent some of the documented shortcomings of Cronbach’s alpha such as assuming unidimensionality and tau-equivalence (e.g., McNeish, 2018). Revelle’s omega total makes some assumptions about the shape of the model, specifically, it assumes that items fit a bi-factor model where they all load onto a general factor (e.g., overall work meaningfulness) as well as other factors (e.g., the factors we identified earlier: coherence, purpose, mattering). Here, this assumption seems tenable as all items loaded well onto the general factor (.32-.84) as well as their respective factors from earlier. In addition, the global fit indices suggested it was a good fit: SRMR = 0.03, RMSEA = 0.071, 90% [0.061 0.082].</p>
+<p>Looking at, omega values, the omega total for the entire scale showed excellent fit (ωt = 0.96), and the same was true for individual factors: coherence (ωt = 0.93), purpose (ωt = 0.94), and significance (ωt = 0.90).</p>
+<p>McNeish, D. (2017, May 29). Thanks Coefficient Alpha, We’ll Take It From Here. Psychological Methods. Advance online publication. http://dx.doi.org/10.1037/met0000144</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>final_omg <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">omega</span>(everything_nogmw1,</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">nfactors =</span> <span class="dv">3</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">fm =</span> <span class="st">"wls"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">key =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">12</span>), <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">cor =</span> <span class="st">"poly"</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>                        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>final_omg </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Omega 
+Call: omegah(m = m, nfactors = nfactors, fm = fm, key = key, flip = flip, 
+    digits = digits, title = title, sl = sl, labels = labels, 
+    plot = plot, n.obs = n.obs, rotate = rotate, Phi = Phi, option = option, 
+    covar = covar, cor = "poly")
+Alpha:                 0.94 
+G.6:                   0.96 
+Omega Hierarchical:    0.72 
+Omega H asymptotic:    0.75 
+Omega Total            0.96 
+
+Schmid Leiman Factor loadings greater than  0.2 
+           g   F1*   F2*   F3*   h2   u2   p2
+coh3    0.49  0.65             0.67 0.33 0.36
+coh4    0.55  0.61             0.69 0.31 0.45
+coh6-   0.32  0.64             0.52 0.48 0.20
+coh8-   0.33  0.62             0.50 0.50 0.22
+coh11-  0.38  0.54             0.45 0.55 0.33
+coh13   0.46  0.71             0.72 0.28 0.29
+coh14   0.44  0.63             0.58 0.42 0.33
+coh15   0.52  0.53             0.55 0.45 0.48
+coh16   0.49  0.64             0.65 0.35 0.37
+purp3   0.79        0.26       0.70 0.30 0.90
+purp4   0.77        0.23       0.67 0.33 0.90
+purp7   0.81        0.30       0.75 0.25 0.88
+purp13  0.81        0.26       0.73 0.27 0.90
+purp14  0.84        0.21       0.77 0.23 0.91
+purp15  0.84        0.25       0.78 0.22 0.90
+sig1    0.70              0.60 0.84 0.16 0.57
+sig3    0.61              0.60 0.74 0.26 0.51
+sig5-   0.50              0.49 0.50 0.50 0.50
+socwor3 0.73              0.40 0.72 0.28 0.75
+
+With eigenvalues of:
+  g F1* F2* F3* 
+7.4 3.6 0.4 1.2 
+
+general/max  2.08   max/min =   8.81
+mean percent general =  0.57    with sd =  0.26 and cv of  0.47 
+Explained Common Variance of the general factor =  0.59 
+
+The degrees of freedom are 117  and the fit is  1.05 
+The number of observations was  278  with Chi Square =  280.88  with prob &lt;  1.7e-15
+The root mean square of the residuals is  0.03 
+The df corrected root mean square of the residuals is  0.04
+RMSEA index =  0.071  and the 10 % confidence intervals are  0.061 0.082
+BIC =  -377.55
+
+Compare this with the adequacy of just a general factor and no group factors
+The degrees of freedom for just the general factor are 152  and the fit is  5.79 
+The number of observations was  278  with Chi Square =  1558.31  with prob &lt;  1.4e-231
+The root mean square of the residuals is  0.19 
+The df corrected root mean square of the residuals is  0.2 
+
+RMSEA index =  0.182  and the 10 % confidence intervals are  0.175 0.191
+BIC =  702.92 
+
+Measures of factor score adequacy             
+                                                 g  F1*   F2*  F3*
+Correlation of scores with factors            0.93 0.92  0.42 0.84
+Multiple R square of scores with factors      0.87 0.85  0.18 0.71
+Minimum correlation of factor score estimates 0.75 0.70 -0.64 0.43
+
+ Total, General and Subset omega for each subset
+                                                 g  F1*  F2*  F3*
+Omega total for total scores and subscales    0.96 0.93 0.94 0.90
+Omega general for total scores and subscales  0.72 0.31 0.86 0.53
+Omega group for total scores and subscales    0.21 0.62 0.08 0.36</code></pre>
+</div>
+</div>
+</section>
+<section id="final-items" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="final-items"><span class="header-section-number">8</span> Final items</h2>
+<section id="coherence-2" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="coherence-2"><span class="header-section-number">8.1</span> Coherence</h3>
+<p>coh13 Most things happening at my work make sense.</p>
+<p>coh14 By and large, I am able to understand what happens at my work.</p>
+<p>coh16 I can easily make sense of my work.</p>
+<p>coh6 My work is unmanageable.(-)</p>
+<p>coh8 My work is uncontrollable.(-)</p>
+<p>coh3 I can make sense of the things that happen at my work.</p>
+<p>coh4 Looking at my work as a whole, things make sense to me</p>
+<p>coh15 I can comprehend what my work is all about.</p>
+<p>coh11 I often have very mixed-up feelings and ideas at work.(-)</p>
+</section>
+<section id="purpose-2" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="purpose-2"><span class="header-section-number">8.2</span> Purpose</h3>
+<p>purp7 I have certain work goals that compel me to keep going.</p>
+<p>purp3 I view my work as contributing to my personal growth.</p>
+<p>purp13 I pursue one or more big purposes at my work.</p>
+<p>purp4 My work allows me to achieve my goals.</p>
+<p>purp15 I have a set of core goals that give my work a sense of direction.</p>
+<p>purp14 I am highly committed to certain core goals at my work.</p>
+</section>
+<section id="significancemattering" class="level3" data-number="8.3">
+<h3 data-number="8.3" class="anchored" data-anchor-id="significancemattering"><span class="header-section-number">8.3</span> Significance/mattering</h3>
+<p>sig3 My job has a large impact on the people outside of the organization.</p>
+<p>sig1 The results of my work are likely to significantly affect the lives of other people.</p>
+<p>sig5 My work really makes no difference to the world.(-)</p>
+<p>socwor3 I feel that I make a positive difference in others’ lives through my work.</p>
 </section>
 </section>
 
