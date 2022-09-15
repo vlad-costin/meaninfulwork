@@ -3,7 +3,6 @@ title: "Meaningful work measurement"
 format: html
 editor: visual
 toc: true
-toc-location: left
 number-sections: true
 ---
 
@@ -505,7 +504,7 @@ cohpurp =~ coh13 + coh14 + coh16 + coh6 + coh8 + coh3 + coh4 + coh15 + coh11 + p
 sig  =~ sig3 + sig1 +sig5 + socwor3
 '
 cohpurp_out <- cfa(cohpurp_mod, data=data_selection, ordered = T, estimator = "dwls")
-summary (cohpurp_out, standardized = TRUE, fit.measures = TRUE)
+summary (cohpurp_mod, standardized = TRUE, fit.measures = TRUE)
 ```
 
 #### Coh and sig items collapsed onto one factor (2-factor model)
@@ -551,3 +550,70 @@ anova(all_out, purpsig_out)
 anova(all_out, cohpurpsig_out)
 ```
 :::
+
+## Reliability analysis
+
+The final model showed excellent reliability. I ran a Revelle's omega total in order to circumvent some of the documented shortcomings of Cronbach's alpha such as assuming unidimensionality and tau-equivalence (e.g., McNeish, 2018). Revelle's omega total makes some assumptions about the shape of the model, specifically, it assumes that items fit a bi-factor model where they all load onto a general factor (e.g., overall work meaningfulness) as well as other factors (e.g., the factors we identified earlier: coherence, purpose, mattering). Here, this assumption seems tenable as all items loaded well onto the general factor (.32-.84) as well as their respective factors from earlier. In addition, the global fit indices suggested it was a good fit: SRMR = 0.03, RMSEA = 0.071, 90% \[0.061 0.082\].
+
+Looking at, omega values, the omega total for the entire scale showed excellent fit (ωt = 0.96), and the same was true for individual factors: coherence (ωt = 0.93), purpose (ωt = 0.94), and significance (ωt = 0.90).
+
+McNeish, D. (2017, May 29). Thanks Coefficient Alpha, We'll Take It From Here. Psychological Methods. Advance online publication. http://dx.doi.org/10.1037/met0000144
+
+```{r}
+final_omg <- psych::omega(everything_nogmw1,
+                        nfactors = 3,
+                        fm = "wls",
+                        key = c(1, 1, -1, -1, -1, rep(1, 12), -1, 1),
+                        cor = "poly"
+                        )
+
+final_omg 
+
+
+```
+
+## Final items
+
+### Coherence
+
+coh13 Most things happening at my work make sense.
+
+coh14 By and large, I am able to understand what happens at my work.
+
+coh16 I can easily make sense of my work.
+
+coh6 My work is unmanageable.(-)
+
+coh8 My work is uncontrollable.(-)
+
+coh3 I can make sense of the things that happen at my work.
+
+coh4 Looking at my work as a whole, things make sense to me
+
+coh15 I can comprehend what my work is all about.
+
+coh11 I often have very mixed-up feelings and ideas at work.(-)
+
+### Purpose
+
+purp7 I have certain work goals that compel me to keep going.
+
+purp3 I view my work as contributing to my personal growth.
+
+purp13 I pursue one or more big purposes at my work.
+
+purp4 My work allows me to achieve my goals.
+
+purp15 I have a set of core goals that give my work a sense of direction.
+
+purp14 I am highly committed to certain core goals at my work.
+
+### Significance/mattering
+
+sig3 My job has a large impact on the people outside of the organization.
+
+sig1 The results of my work are likely to significantly affect the lives of other people.
+
+sig5 My work really makes no difference to the world.(-)
+
+socwor3 I feel that I make a positive difference in others' lives through my work.
